@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>DefaultValue</key>
+		<string>japanese</string>
+		<key>Key</key>
+		<string>deck_name</string>
+		<key>Title</key>
+		<string>Deck Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>Basic</string>
+		<key>Key</key>
+		<string>model_name</string>
+		<key>Title</key>
+		<string>Model Name / Card Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Field Mapping</string>
+		<key>Type</key>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>kanji</string>
+		<key>Key</key>
+		<string>field_kanji</string>
+		<key>Title</key>
+		<string>Kanji Field Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>hiragana</string>
+		<key>Key</key>
+		<string>field_kana</string>
+		<key>Title</key>
+		<string>Kana Field Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>english</string>
+		<key>Key</key>
+		<string>field_english</string>
+		<key>Title</key>
+		<string>English Field Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+</array>
+</plist>
