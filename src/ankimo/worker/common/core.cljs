@@ -32,9 +32,9 @@
           deck-name (<! (browser/get-setting "deck_name"))
           model-name (<! (browser/get-setting "model_name"))]
 
-      (let [response (<! (anki/add-note deck-name model-name {:kanji kanji
-                                                              :hiragana kana
-                                                              :english english}
+      (let [response (<! (anki/add-note deck-name model-name {field-kanji kanji
+                                                              field-kana kana
+                                                              field-english english}
                                         [:ankimo :tangorin]))]
         (match response
                [:ok _] true
