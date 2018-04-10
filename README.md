@@ -2,6 +2,8 @@
 
 Browser extension for sending Japanese words to Anki
 
+![tangorin](./screenshots/tangorin.gif)
+
 ## Usage
 
 Currently works on
