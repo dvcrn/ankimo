@@ -48,6 +48,13 @@
                                    :output-dir "out/chrome/main/",
                                    :optimizations :simple,
                                    :pretty-print true}}
+
+                       {:id "chrome-options"
+                        :source-paths ["src/ankimo/chrome/options"],
+                        :compiler {:output-to "chrome/options.js",
+                                   :output-dir "out/chrome/options/",
+                                   :optimizations :simple,
+                                   :pretty-print true}}
                        ]}
 
   :figwheel {:http-server-root "public"

@@ -10,9 +10,6 @@
       },
       "options_ui": {
           "page": "options.html",
-          "chrome_style": true,
-
-          // TODO: remove before release
-          "open_in_tab": true
+          "chrome_style": true
       }
   }
