@@ -7,9 +7,9 @@
 	<key>Builder Version</key>
 	<string>13605.1.33.1.2</string>
 	<key>CFBundleDisplayName</key>
-	<string>Ankibuddy</string>
+	<string>Ankimo</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.davidmohl.ankibuddy</string>
+	<string>com.davidmohl.ankimo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -34,7 +34,7 @@
 	<key>Description</key>
 	<string>Browser extension for sending Japanese words to Anki</string>
 	<key>DeveloperIdentifier</key>
-	<string>0000000000</string>
+	<string>6LF3GMKZAB</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -52,6 +52,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>https://github.com/dvcrn/ankibuddy</string>
+	<string>https://github.com/dvcrn/ankimo</string>
 </dict>
 </plist>

@@ -1,4 +1,4 @@
-(ns ankibuddy.main.safari.core)
+(ns ankimo.main.safari.core)
 
 (def application (.-application js/safari))
 
@@ -6,8 +6,6 @@
 (defmethod handle-message :default [name payload] (println "no event handler for this message"))
 
 (defmethod handle-message :get-settings [name payload]
-  (println "get settings")
-  (.log js/console (aget js/safari "extension" "settings" payload))
   (aget js/safari "extension" "settings" payload))
 
 (defmethod handle-message :get-hoge [name payload]

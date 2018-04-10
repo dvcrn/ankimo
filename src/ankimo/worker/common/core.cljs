@@ -1,17 +1,18 @@
-(ns ankibuddy.worker.common.core
+(ns ankimo.worker.common.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require
    [dommy.core :as dommy :refer-macros [sel sel1]]
    [anki-cljs.core :as anki]
    [cljs.core.async :as async :refer [<! >!]]
    [cljs.core.match :refer-macros [match]]
-   [ankibuddy.browser :as browser]))
+   [ankimo.worker.x.browser :as browser]))
+
 
 (defn create-button [text handler]
     ;; create
   (let [button (->
                 (dommy/create-element "a")
-                (dommy/add-class! :ankibuddy-add)
+                (dommy/add-class! :ankimo-add)
                 (dommy/set-text! text))]
     (dommy/listen! button :click handler)))
 
@@ -34,7 +35,7 @@
       (let [response (<! (anki/add-note deck-name model-name {:kanji kanji
                                                               :hiragana kana
                                                               :english english}
-                                        [:ankibuddy :tangorin]))]
+                                        [:ankimo :tangorin]))]
         (match response
           [:ok _] (.alert js/window "Added to Anki!")
           [:error msg] (.alert js/window msg))))))

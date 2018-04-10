@@ -1,4 +1,4 @@
-(ns ankibuddy.browser
+(ns ankimo.worker.x.browser
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :as async :refer [chan <! >! close!]]))
 

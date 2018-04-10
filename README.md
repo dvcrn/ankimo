@@ -1,4 +1,4 @@
-# Anki Buddy
+# Ankimo
 
 Browser extension for sending Japanese words to Anki
 

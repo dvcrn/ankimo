@@ -1,6 +1,6 @@
-(defproject ankibuddy "0.1.0"
+(defproject ankimo "0.1.0"
   :description "Browser extension for sending Japanese words to Anki"
-  :url "https://github.com/dvcrn/ankibuddy"
+  :url "https://github.com/dvcrn/ankimo"
   :license {:name "MIT"
             :url "https://mit-license.org"}
   :dependencies [[org.clojure/clojure "1.8.0"]
@@ -29,16 +29,16 @@
                        ;;            :optimizations :none,
                        ;;            :pretty-print true}}
                        {:id "safari-worker"
-                        :source-paths ["src/ankibuddy/worker/safari" "src/ankibuddy/worker/common"],
-                        :compiler {:output-to "ankibuddy.safariextension/worker.js",
-                                   :output-dir "out/ankibuddy.safariextension/worker/",
+                        :source-paths ["src/ankimo/worker/safari" "src/ankimo/worker/common"],
+                        :compiler {:output-to "ankimo.safariextension/worker.js",
+                                   :output-dir "out/ankimo.safariextension/worker/",
                                    :optimizations :simple,
                                    :pretty-print true}}
 
                        {:id "safari-main"
-                        :source-paths ["src/ankibuddy/main/safari"],
-                        :compiler {:output-to "ankibuddy.safariextension/main.js",
-                                   :output-dir "out/ankibuddy.safariextension/main/",
+                        :source-paths ["src/ankimo/main/safari"],
+                        :compiler {:output-to "ankimo.safariextension/main.js",
+                                   :output-dir "out/ankimo.safariextension/main/",
                                    :optimizations :simple,
                                    :pretty-print true}}]}
 
