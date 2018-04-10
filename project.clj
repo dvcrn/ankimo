@@ -29,18 +29,26 @@
                        ;;            :optimizations :none,
                        ;;            :pretty-print true}}
                        {:id "safari-worker"
-                        :source-paths ["src/ankimo/worker/safari" "src/ankimo/worker/common"],
+                        :source-paths ["src/ankimo/safari/worker" "src/ankimo/common/worker"],
                         :compiler {:output-to "ankimo.safariextension/worker.js",
                                    :output-dir "out/ankimo.safariextension/worker/",
                                    :optimizations :simple,
                                    :pretty-print true}}
 
                        {:id "safari-main"
-                        :source-paths ["src/ankimo/main/safari"],
+                        :source-paths ["src/ankimo/safari/main"],
                         :compiler {:output-to "ankimo.safariextension/main.js",
                                    :output-dir "out/ankimo.safariextension/main/",
                                    :optimizations :simple,
-                                   :pretty-print true}}]}
+                                   :pretty-print true}}
+
+                       {:id "chrome-main"
+                        :source-paths ["src/ankimo/chrome/main"],
+                        :compiler {:output-to "chrome/background.js",
+                                   :output-dir "out/chrome/main/",
+                                   :optimizations :simple,
+                                   :pretty-print true}}
+                       ]}
 
   :figwheel {:http-server-root "public"
              :server-port 5309

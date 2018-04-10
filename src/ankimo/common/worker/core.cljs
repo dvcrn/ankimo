@@ -1,11 +1,11 @@
-(ns ankimo.worker.common.core
+(ns ankimo.common.worker.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require
    [dommy.core :as dommy :refer-macros [sel sel1]]
    [anki-cljs.core :as anki]
    [cljs.core.async :as async :refer [<! >!]]
    [cljs.core.match :refer-macros [match]]
-   [ankimo.worker.x.browser :as browser]))
+   [ankimo.x.worker.browser :as browser]))
 
 
 (defn create-button [text handler]

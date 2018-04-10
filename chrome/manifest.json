@@ -1,0 +1,18 @@
+  {
+      "name": "Ankimo",
+      "version": "0.2.0",
+      "description": "Browser extension for sending Japanese words to Anki",
+      "permissions": ["storage"],
+      "manifest_version": 2,
+      "background": {
+          "scripts": ["background.js"],
+          "persistent": false
+      },
+      "options_ui": {
+          "page": "options.html",
+          "chrome_style": true,
+
+          // TODO: remove before release
+          "open_in_tab": true
+      }
+  }

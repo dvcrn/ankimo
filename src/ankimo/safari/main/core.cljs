@@ -1,4 +1,4 @@
-(ns ankimo.main.safari.core)
+(ns ankimo.safari.main.core)
 
 (def application (.-application js/safari))
 
