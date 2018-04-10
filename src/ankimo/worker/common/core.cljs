@@ -37,8 +37,8 @@
                                                               :english english}
                                         [:ankimo :tangorin]))]
         (match response
-          [:ok _] (.alert js/window "Added to Anki!")
-          [:error msg] (.alert js/window msg))))))
+               [:ok _] true
+               [:error msg] (do (.alert js/window msg) false))))))
 
 (defn pageLoad
   []
@@ -50,7 +50,15 @@
             kanji (extract-kanji entry)] ;; extract kanji
         (doseq [english-el english-translations]
           (let [english-text (dommy/text english-el)]
-            (->> (create-button "add to anki" #(add-to-anki kanji kana english-text))
+            (->> (create-button " add to anki 🐠" (fn [el]
+                                                    (this-as this
+                                                      (do
+                                                        (let [previous-text (.-innerHTML this)]
+                                                          (go
+                                                            (aset this "innerHTML" " adding...")
+                                                              (if (<! (add-to-anki kanji kana english-text))
+                                                                (aset this "innerHTML" " added!")
+                                                                (aset this "innerHTML" previous-text))))))))
                  (dommy/append! english-el))))))))
 
 (.addEventListener js/window "load" pageLoad)
