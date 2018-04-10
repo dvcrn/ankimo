@@ -1,4 +1,4 @@
-(defproject ankimo "0.1.0"
+(defproject ankimo "0.1.1"
   :description "Browser extension for sending Japanese words to Anki"
   :url "https://github.com/dvcrn/ankimo"
   :license {:name "MIT"
