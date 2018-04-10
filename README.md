@@ -18,6 +18,10 @@ Go to settings and set the field mapping correctly
 
 Depends on [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
 
+Download [here](https://github.com/dvcrn/ankimo/releases)
+
+(Currently Safari only, others coming soon!)
+
 ## License
 
 MIT
