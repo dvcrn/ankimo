@@ -10,7 +10,7 @@
    (.getElementById js/document id)
    (aset "value" value)))
 
-(def option-fields [:deck-name :model-name :field-kanji :field-kana :field-english])
+(def option-fields [:deck_name :model_name :field_kanji :field_kana :field_english])
 
 (defn load-settings []
   ;; convert all option fields into a map in form of {:key "key"}
