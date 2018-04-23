@@ -15,13 +15,15 @@ Currently works on
 
 Install [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
 
-Download the latest version [here](https://github.com/dvcrn/ankimo/releases/latest)
-
-(Currently Safari only, others coming soon!)
+- [Safari](https://github.com/dvcrn/ankimo/releases/latest)
+- [Chrome](https://chrome.google.com/webstore/detail/ankimo/mgcnkmjoaekofcajlgmakljhennlhjod)
 
 ### Configuration
 
-Open the settings (in Safari `CMD-,` and head to Extensions) and set up the field mappings correctly. 
+Open the settings and set up the field mappings correctly. 
+
+- In Safari, hit `CMD-,` and go to 'Extensions'
+- In Chrome, right-click the Ankimo icon and click 'Options'
 
 ## Developing
 
