@@ -32,29 +32,41 @@
                         :source-paths ["src/ankimo/safari/worker" "src/ankimo/common/worker"],
                         :compiler {:output-to "ankimo.safariextension/worker.js",
                                    :output-dir "out/ankimo.safariextension/worker/",
+                                   :closure-output-charset "us-ascii"
                                    :optimizations :simple,
-                                   :pretty-print true}}
+                                   :pretty-print false}}
 
                        {:id "safari-main"
                         :source-paths ["src/ankimo/safari/main"],
                         :compiler {:output-to "ankimo.safariextension/main.js",
                                    :output-dir "out/ankimo.safariextension/main/",
+                                   :closure-output-charset "us-ascii"
                                    :optimizations :simple,
-                                   :pretty-print true}}
+                                   :pretty-print false}}
 
                        {:id "chrome-main"
                         :source-paths ["src/ankimo/chrome/main"],
                         :compiler {:output-to "chrome/background.js",
                                    :output-dir "out/chrome/main/",
+                                   :closure-output-charset "us-ascii"
                                    :optimizations :simple,
-                                   :pretty-print true}}
+                                   :pretty-print false}}
 
                        {:id "chrome-options"
                         :source-paths ["src/ankimo/chrome/options"],
                         :compiler {:output-to "chrome/options.js",
                                    :output-dir "out/chrome/options/",
+                                   :closure-output-charset "us-ascii"
                                    :optimizations :simple,
-                                   :pretty-print true}}
+                                   :pretty-print false}}
+
+                       {:id "chrome-worker"
+                        :source-paths ["src/ankimo/chrome/worker" "src/ankimo/common/worker"],
+                        :compiler {:output-to "chrome/worker.js",
+                                   :output-dir "out/chrome/worker/",
+                                   :closure-output-charset "us-ascii"
+                                   :optimizations :simple,
+                                   :pretty-print false}}
                        ]}
 
   :figwheel {:http-server-root "public"

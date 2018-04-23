@@ -5,12 +5,15 @@
 (def channels (atom {}))
 
 (defn generate-channel-id
+  "Generate a random string to be used as channel-id"
   ([]
    (generate-channel-id (map char (range 49 127))))
   ([alphabet]
    (apply str (take 10 (repeatedly #(rand-nth alphabet))))))
 
 (defn dispatch-message [name payload]
+  "Dispatches a message to the background page.
+   Returns a channel that will contain the response from background."
   (let [channel-id (generate-channel-id)
         chan (chan)]
 
@@ -21,11 +24,13 @@
     chan))
 
 (defn message-handler [event]
+  "A event message always has to come in the form {:payload ... :channel-id ...}.
+   The channel-id gets created in dispatch-message and maps to the channel the answer should be put in"
   (let [event-name (.-name event)
         message (js->clj (.-message event) :keywordize-keys true)
         {payload :payload
          channel-id :channel-id} message
-        channel (get @channels channel-id)] ;; channel to answer to
+        channel (get @channels channel-id)] ;; fetch channel to answer to
 
     ;; put answer into channel
     (go
@@ -41,14 +46,3 @@
 
 (defn get-setting [field]
   (dispatch-message "get-settings" field))
-
-(defn hoge []
-  (println "i'm safari still")
-  (.log js/console js/safari)
-  (.log js/console (.. js/safari -self))
-  (.log js/console (.. js/safari -self -tab))
-  ;;(.log js/console (.dispatchMessage (.. js/safari -self -tab) "get-settings" "field_kana"))
-  (go
-    (let [response (<! (dispatch-message "get-settings" "field_kana"))]
-      (.log js/console "got answer backk!!!!")
-      (.log js/console response))))

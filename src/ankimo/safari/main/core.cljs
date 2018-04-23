@@ -2,17 +2,15 @@
 
 (def application (.-application js/safari))
 
-(defmulti handle-message (fn [name payload] (keyword name)))
+(defmulti handle-message (fn [name payload] (keyword name))) ;; dispatch multi based on keywordized event-name
 (defmethod handle-message :default [name payload] (println "no event handler for this message"))
 
 (defmethod handle-message :get-settings [name payload]
   (aget js/safari "extension" "settings" payload))
 
-(defmethod handle-message :get-hoge [name payload]
-  (println "get hoge"))
-
 (defn message-handler [event]
-  (.log js/console event)
+  "A event message always has to come in the form {:payload ... :channel-id ...}.
+   The channel-id is used to resolve to the correct core.async channel on the frontend."
   (let [event-name (.-name event)
         message (js->clj (.-message event) :keywordize-keys true)
         {payload :payload
