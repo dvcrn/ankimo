@@ -23,6 +23,20 @@
 		<string>TextField</string>
 	</dict>
 	<dict>
+		<key>DefaultValue</key>
+		<string>10</string>
+		<key>Key</key>
+		<string>max_english_translations</string>
+		<key>MaximumValue</key>
+		<integer>10</integer>
+		<key>MinimumValue</key>
+		<integer>1</integer>
+		<key>Title</key>
+		<string>Max English Translations</string>
+		<key>Type</key>
+		<string>Slider</string>
+	</dict>
+	<dict>
 		<key>Title</key>
 		<string>Field Mapping</string>
 		<key>Type</key>

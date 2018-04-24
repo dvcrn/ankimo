@@ -30,11 +30,14 @@
           field-kana (<! (browser/get-setting "field_kana"))
           field-english (<! (browser/get-setting "field_english"))
           deck-name (<! (browser/get-setting "deck_name"))
-          model-name (<! (browser/get-setting "model_name"))]
+          model-name (<! (browser/get-setting "model_name"))
 
+          max-english (-> (<! (browser/get-setting "max_english_translations")) int)
+          english-definitions (map clojure.string/trim (clojure.string/split english #";"))
+          english-definitions-limited (clojure.string/join "; " (take max-english english-definitions))]
       (let [response (<! (anki/add-note deck-name model-name {field-kanji kanji
                                                               field-kana kana
-                                                              field-english english}
+                                                              field-english english-definitions-limited}
                                         [:ankimo :tangorin]))]
         (match response
                [:ok _] true
@@ -56,9 +59,9 @@
                                                         (let [previous-text (.-innerHTML this)]
                                                           (go
                                                             (aset this "innerHTML" " adding...")
-                                                              (if (<! (add-to-anki kanji kana english-text))
-                                                                (aset this "innerHTML" " added!")
-                                                                (aset this "innerHTML" previous-text))))))))
+                                                            (if (<! (add-to-anki kanji kana english-text))
+                                                              (aset this "innerHTML" " added!")
+                                                              (aset this "innerHTML" previous-text))))))))
                  (dommy/append! english-el))))))))
 
 (.addEventListener js/window "load" pageLoad)
