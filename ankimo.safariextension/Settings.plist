@@ -72,5 +72,25 @@
 		<key>Type</key>
 		<string>TextField</string>
 	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>english_example</string>
+		<key>Key</key>
+		<string>field_english_example</string>
+		<key>Title</key>
+		<string>English Example Field Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>japanese_example</string>
+		<key>Key</key>
+		<string>field_japanese_example</string>
+		<key>Title</key>
+		<string>Japanese Example Field Name</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
 </array>
 </plist>

@@ -5,4 +5,6 @@
                  :max_english_translations 10
                  :field_kanji "Kanji"
                  :field_kana "Hiragana"
-                 :field_english "English"})
+                 :field_english "English"
+                 :field_english_example "EnglishExample"
+                 :field_japanese_example "JapaneseExample"})

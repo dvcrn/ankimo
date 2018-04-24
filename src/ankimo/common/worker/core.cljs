@@ -24,11 +24,22 @@
 (defn extract-kana [el] (extract-text el ".kana ruby rb"))
 (defn extract-kanji [el] (extract-text el ".writing"))
 
-(defn add-to-anki [kanji kana english]
+(defn extract-example-japanese [el]
+  (let [el (sel1 el ".ex-jap")]
+    (if (nil? el) "" (dommy/text el))))
+
+(defn extract-example-english [el]
+  (let [el (sel1 el ".ex-en")]
+    (if (nil? el) "" (dommy/text el))))
+
+(defn add-to-anki [kanji kana english english-example japanese-example]
   (go
     (let [field-kanji (<! (browser/get-setting "field_kanji"))
           field-kana (<! (browser/get-setting "field_kana"))
           field-english (<! (browser/get-setting "field_english"))
+          field-english-example (<! (browser/get-setting "field_english_example"))
+          field-japanese-example (<! (browser/get-setting "field_japanese_example"))
+
           deck-name (<! (browser/get-setting "deck_name"))
           model-name (<! (browser/get-setting "model_name"))
 
@@ -37,7 +48,9 @@
           english-definitions-limited (clojure.string/join "; " (take max-english english-definitions))]
       (let [response (<! (anki/add-note deck-name model-name {field-kanji kanji
                                                               field-kana kana
-                                                              field-english english-definitions-limited}
+                                                              field-english english-definitions-limited
+                                                              field-english-example english-example
+                                                              field-japanese-example japanese-example}
                                         [:ankimo :tangorin]))]
         (match response
                [:ok _] true
@@ -52,14 +65,18 @@
             kana (extract-kana entry) ;; extract kana
             kanji (extract-kanji entry)] ;; extract kanji
         (doseq [english-el english-translations]
-          (let [english-text (dommy/text english-el)]
+          (let [parent (dommy/parent english-el)
+                english-text (dommy/text english-el)
+
+                example-english (extract-example-english parent) ;; extract english example
+                example-japanese (extract-example-japanese parent)] ;; extract japanese example
             (->> (create-button " add to anki 🐠" (fn [el]
                                                     (this-as this
                                                       (do
                                                         (let [previous-text (.-innerHTML this)]
                                                           (go
                                                             (aset this "innerHTML" " adding...")
-                                                            (if (<! (add-to-anki kanji kana english-text))
+                                                            (if (<! (add-to-anki kanji kana english-text example-english example-japanese))
                                                               (aset this "innerHTML" " added!")
                                                               (aset this "innerHTML" previous-text))))))))
                  (dommy/append! english-el))))))))
