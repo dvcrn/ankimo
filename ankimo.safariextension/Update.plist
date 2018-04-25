@@ -10,11 +10,11 @@
 			<key>Developer Identifier</key>
 			<string>6LF3GMKZAB</string>
 			<key>CFBundleVersion</key>
-			<string>2</string>
+			<string>3</string>
 			<key>CFBundleShortVersionString</key>
-			<string>0.2.0</string>
+			<string>0.3.0</string>
 			<key>URL</key>
-			<string>https://github.com/dvcrn/ankimo/releases/download/v0.2.0/ankimo.safariextz</string>
+			<string>https://github.com/dvcrn/ankimo/releases/download/v0.3.0/ankimo.safariextz</string>
 		</dict>
 	</array>
 </dict>

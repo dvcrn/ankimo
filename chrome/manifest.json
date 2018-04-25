@@ -1,7 +1,7 @@
   {
       "short_name": "Ankimo",
       "name": "Ankimo - Quickly add Japanese words to Anki",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "description": "Browser extension for sending Japanese words to Anki",
       "permissions": ["storage"],
       "manifest_version": 2,
