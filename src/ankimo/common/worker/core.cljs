@@ -24,12 +24,25 @@
 (defn extract-kana [el] (extract-text el ".kana ruby rb"))
 (defn extract-kanji [el] (extract-text el ".writing"))
 
+(defn get-shortest-example [el selector]
+  (let [els (sel el ".ex li") ;; all examples
+        els (filter #(not (nil? (sel1 %1 ".ex-jap"))) els)] ;; only when it has a japanese text
+    (when
+        (> (count els) 0) ;; only when we actually have examples
+      (->
+       (reduce (fn [shortest current]
+                 (let [jp1 (dommy/text (sel1 shortest ".ex-jap"))
+                       jp2 (dommy/text (sel1 current ".ex-jap"))]
+
+                   (if (> (count jp1) (count jp2)) current shortest))) els)
+       (sel1 selector)))))
+
 (defn extract-example-japanese [el]
-  (let [el (sel1 el ".ex-jap")]
+  (let [el (get-shortest-example el ".ex-jap")]
     (if (nil? el) "" (dommy/text el))))
 
 (defn extract-example-english [el]
-  (let [el (sel1 el ".ex-en")]
+  (let [el (get-shortest-example el ".ex-en")]
     (if (nil? el) "" (dommy/text el))))
 
 (defn add-to-anki [kanji kana english english-example japanese-example]
