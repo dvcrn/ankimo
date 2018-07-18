@@ -8,13 +8,13 @@
 			<key>CFBundleIdentifier</key>
 			<string>com.davidmohl.ankimo</string>
 			<key>Developer Identifier</key>
-			<string>6LF3GMKZAB</string>
+			<string>63Q9A24RB3</string>
 			<key>CFBundleVersion</key>
-			<string>3</string>
+			<string>4</string>
 			<key>CFBundleShortVersionString</key>
-			<string>0.3.0</string>
+			<string>0.4.0</string>
 			<key>URL</key>
-			<string>https://github.com/dvcrn/ankimo/releases/download/v0.3.0/ankimo.safariextz</string>
+			<string>https://github.com/dvcrn/ankimo/releases/download/v0.3.1/ankimo.safariextz</string>
 		</dict>
 	</array>
 </dict>
