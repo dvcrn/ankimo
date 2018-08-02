@@ -15,7 +15,7 @@ Currently works on
 
 Install [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
 
-- [Safari](https://github.com/dvcrn/ankimo/releases/latest)
+- [Safari](https://safari-extensions.apple.com/details/?id=com.davidmohl.ankimo-63Q9A24RB3)
 - [Chrome](https://chrome.google.com/webstore/detail/ankimo/mgcnkmjoaekofcajlgmakljhennlhjod)
 
 ### Configuration
