@@ -6,7 +6,7 @@
       "permissions": ["storage"],
       "manifest_version": 2,
       "content_scripts": [{
-          "matches": ["http://tangorin.com/*"],
+          "matches": ["https://tangorin.com/*"],
           "js": ["worker.js"]
       }],
       "icons": {
