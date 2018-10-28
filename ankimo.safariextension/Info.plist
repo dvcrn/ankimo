@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>David Mohl</string>
 	<key>Builder Version</key>
-	<string>14606.1.24.40.1</string>
+	<string>14606.1.36.1.9</string>
 	<key>CFBundleDisplayName</key>
 	<string>Ankimo</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.3.1</string>
+	<string>0.4</string>
 	<key>CFBundleVersion</key>
 	<string>3</string>
 	<key>Chrome</key>
